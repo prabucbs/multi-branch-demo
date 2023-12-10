@@ -5,7 +5,7 @@ pipeline {
     environment {
         Name = 'Prabu'
     }
-    def args = [:]
+    def args = [: ]
     stages {
         stage('HelloWorld') {
             steps {
