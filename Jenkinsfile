@@ -1,11 +1,12 @@
 @Library('my-shared-library') _
+def args = [:]
+   
 pipeline {
     agent any
-
-    environment {
+     environment {
         Name = 'Prabu'
     }
-    def args = [: ]
+
     stages {
         stage('HelloWorld') {
             steps {
