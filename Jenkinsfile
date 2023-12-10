@@ -11,8 +11,10 @@ pipeline {
     stages {
         stage('HelloWorld') {
             steps {
+                script{
                 args.Name = "${Name}"
                 helloWorld(args)
+                }
             }
         }
     }
