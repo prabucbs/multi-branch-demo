@@ -1,10 +1,17 @@
+#!groovy
+@Library('my-shared-library') _
+
+environment{
+    Name = 'Prabu'
+}
+
 pipeline {
     agent any
 
     stages {
         stage('HelloWorld') {
             steps {
-                echo 'Hello, World!'
+                helloWorld()
             }
         }
     }
