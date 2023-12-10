@@ -5,6 +5,7 @@ environment{
     Name = 'Prabu'
 }
 
+def args = [:]
 pipeline {
     agent any
 
