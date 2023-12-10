@@ -1,20 +1,21 @@
-#!groovy
 @Library('my-shared-library') _
-
-environment{
-    Name = 'Prabu'
-}
-
-def args = [:]
 pipeline {
     agent any
 
+    environment {
+        Name = 'Prabu'
+    }
+    def args = [:]
     stages {
         stage('HelloWorld') {
             steps {
-                script{
-                args.Name = "${Name}"
-                helloWorld(args)
+                script {
+                    // Define args explicitly to avoid scoping issues
+                    
+                    args.Name = env.Name
+
+                    // Call the helloWorld function from the shared library
+                    helloWorld(args)
                 }
             }
         }
