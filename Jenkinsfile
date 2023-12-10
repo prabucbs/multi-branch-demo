@@ -11,7 +11,8 @@ pipeline {
     stages {
         stage('HelloWorld') {
             steps {
-                helloWorld()
+                args.Name = "${Name}"
+                helloWorld(args)
             }
         }
     }
