@@ -4,7 +4,7 @@ def args = [:]
 pipeline {
     agent any
      environment {
-        Name = 'Prabu'
+        Name = 'true'
     }
 
     stages {
@@ -13,7 +13,7 @@ pipeline {
                 script {
                     // Define args explicitly to avoid scoping issues
                     
-                    args.Name = env.Name
+                    args.Name = ${Name}
 
                     // Call the helloWorld function from the shared library
                     helloWorld(args)
